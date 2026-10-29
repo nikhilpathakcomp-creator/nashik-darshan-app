@@ -1,0 +1,1021 @@
+
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700;800&display=swap');
+
+:root {
+  font-family: 'DM Sans', Arial, sans-serif;
+  color: #183328;
+  background: #f8f7f1;
+  --green: #06452e;
+  --dark-green: #052e22;
+  --light-green: #eaf3e8;
+  --gold: #e8bd62;
+  --muted: #68776d;
+  --border: #e5e9e0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 90px;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  background: #f8f7f1;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+}
+
+#root,
+.app {
+  width: 100%;
+  min-height: 100vh;
+}
+
+.app {
+  overflow-x: clip;
+}
+
+/* HEADER */
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 14px clamp(16px, 4vw, 60px);
+  background: rgba(255, 255, 255, 0.97);
+  border-bottom: 1px solid var(--border);
+  box-shadow: 0 3px 18px rgba(10, 45, 27, 0.06);
+  backdrop-filter: blur(12px);
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  flex-shrink: 0;
+  color: var(--dark-green);
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: clamp(18px, 1.8vw, 26px);
+  font-weight: 800;
+}
+
+.brand-icon {
+  font-size: 30px;
+}
+
+.main-nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.main-nav a {
+  padding: 7px 0;
+  color: #34483c;
+  font-size: 12px;
+  font-weight: 700;
+  border-bottom: 2px solid transparent;
+}
+
+.main-nav a:hover {
+  color: var(--green);
+  border-bottom-color: var(--gold);
+}
+
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  flex-shrink: 0;
+}
+
+.language-selector {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 9px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: white;
+}
+
+.language-selector select {
+  max-width: 90px;
+  border: 0;
+  outline: 0;
+  background: transparent;
+  font-size: 12px;
+}
+
+.user-greeting {
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.logout-button {
+  padding: 10px 14px;
+  border: 0;
+  border-radius: 9px;
+  background: var(--green);
+  color: white;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.logout-button:hover {
+  background: #0b6544;
+}
+
+/* HERO BACKGROUND IMAGE */
+
+.hero-section {
+  display: flex;
+  align-items: center;
+  min-height: clamp(430px, 45vw, 580px);
+  padding: clamp(35px, 6vw, 80px) clamp(22px, 8vw, 120px);
+  color: white;
+
+  background-image:
+    linear-gradient(
+      90deg,
+      rgba(3, 30, 22, 0.84) 0%,
+      rgba(3, 30, 22, 0.58) 48%,
+      rgba(3, 30, 22, 0.12) 100%
+    ),
+    url('/godavari-ghat.jpg');
+
+  background-position: center 52%;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.hero-content {
+  width: 100%;
+  max-width: 720px;
+}
+
+.hero-eyebrow {
+  margin: 0 0 15px;
+  color: #f9e6b9;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.hero-content h1 {
+  margin: 0 0 14px;
+  color: white;
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: clamp(38px, 5.5vw, 72px);
+  font-weight: 800;
+  line-height: 1.08;
+}
+
+.hero-content h2 {
+  margin: 0 0 16px;
+  color: var(--gold);
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: clamp(21px, 2.5vw, 34px);
+  line-height: 1.3;
+}
+
+.hero-content > p:last-of-type {
+  max-width: 570px;
+  margin: 0;
+  color: #f3f5f0;
+  font-size: clamp(14px, 1.35vw, 18px);
+  line-height: 1.8;
+}
+
+.hero-actions {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-top: 26px;
+}
+
+.hero-actions button {
+  min-height: 48px;
+  padding: 13px 22px;
+  border: 1px solid white;
+  border-radius: 10px;
+  background: var(--green);
+  color: white;
+  font-weight: 700;
+  transition: 0.2s ease;
+}
+
+.hero-actions button:hover {
+  transform: translateY(-2px);
+  background: #0b6544;
+}
+
+.hero-actions .secondary-button {
+  background: white;
+  color: var(--dark-green);
+}
+
+/* SECTIONS */
+
+.places-section,
+.content-section,
+.about-section {
+  width: min(1240px, calc(100% - 48px));
+  margin: 46px auto;
+}
+
+.section-heading {
+  margin-bottom: 22px;
+}
+
+.section-heading h2 {
+  margin: 0 0 9px;
+  color: #13291e;
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: clamp(26px, 3vw, 38px);
+  line-height: 1.25;
+}
+
+.section-heading p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+section[id] {
+  scroll-margin-top: 95px;
+}
+
+/* SEARCH AND FILTERS */
+
+.places-controls {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  flex-wrap: wrap;
+  margin: 22px 0;
+}
+
+.places-controls input {
+  width: min(340px, 100%);
+  min-height: 45px;
+  padding: 12px 15px;
+  border: 1px solid #dfe5db;
+  border-radius: 11px;
+  outline: none;
+  background: white;
+}
+
+.places-controls input:focus {
+  border-color: #438563;
+  box-shadow: 0 0 0 3px rgba(67, 133, 99, 0.13);
+}
+
+.category-filters {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.category {
+  padding: 9px 13px;
+  border: 1px solid var(--border);
+  border-radius: 30px;
+  background: white;
+  color: #435649;
+  font-size: 12px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.category:hover,
+.category.active {
+  border-color: var(--green);
+  background: var(--green);
+  color: white;
+}
+
+.results-count {
+  margin: 17px 0;
+  color: var(--muted);
+  font-size: 12px;
+}
+
+/* DESTINATION CARDS */
+
+.places-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 20px;
+}
+
+.place-card {
+  min-width: 0;
+  overflow: hidden;
+  border: 1px solid #e7ebe3;
+  border-radius: 16px;
+  background: white;
+  box-shadow: 0 5px 20px rgba(18, 50, 29, 0.06);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.place-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 14px 28px rgba(18, 50, 29, 0.12);
+}
+
+/* Works when App.jsx contains the image element */
+
+.place-card-image {
+  display: block;
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  object-position: center;
+  background: #e7ece3;
+}
+
+.place-card-content {
+  padding: 16px;
+}
+
+.place-category {
+  display: inline-block;
+  padding: 5px 10px;
+  border-radius: 30px;
+  background: var(--light-green);
+  color: var(--green);
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.place-card h3 {
+  margin: 12px 0 7px;
+  color: #183328;
+  font-size: 16px;
+  line-height: 1.45;
+}
+
+.place-native-name,
+.place-location,
+.place-description {
+  margin: 6px 0;
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.65;
+}
+
+.place-card-actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  margin-top: 14px;
+}
+
+.map-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 35px;
+  padding: 9px 12px;
+  border-radius: 9px;
+  background: var(--green);
+  color: white;
+  font-size: 11px;
+  font-weight: 700;
+  text-align: center;
+}
+
+.map-button:hover {
+  background: #0b6544;
+}
+
+.favorite-button {
+  min-width: 38px;
+  min-height: 35px;
+  border: 1px solid var(--border);
+  border-radius: 9px;
+  background: white;
+}
+
+.favorite-button.favorited {
+  background: #fff0f0;
+}
+
+.no-results {
+  padding: 32px;
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  background: white;
+  color: var(--muted);
+  text-align: center;
+}
+
+/* COMPONENT SECTIONS */
+
+.content-section {
+  padding: clamp(18px, 3vw, 32px);
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  background: white;
+  box-shadow: 0 7px 25px rgba(18, 50, 29, 0.05);
+}
+
+.content-section > *,
+.content-section form {
+  max-width: 100%;
+  min-width: 0;
+}
+
+.content-section img {
+  max-width: 100%;
+  height: auto;
+}
+
+.content-section input,
+.content-section select,
+.content-section textarea,
+.content-section button {
+  max-width: 100%;
+}
+
+.content-section table {
+  display: block;
+  max-width: 100%;
+  overflow-x: auto;
+  border-collapse: collapse;
+}
+
+/* ABOUT */
+
+.about-section {
+  padding: clamp(22px, 4vw, 44px);
+  border: 1px solid #e1eadc;
+  border-radius: 18px;
+  background: #edf4e9;
+}
+
+/* FOOTER */
+
+.site-footer {
+  padding: 30px 22px;
+  background: var(--dark-green);
+  color: #eaf3eb;
+  text-align: center;
+}
+
+.site-footer p {
+  margin: 0;
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+/* LOADING */
+
+.loading-screen {
+  display: grid;
+  place-items: center;
+  min-height: 100vh;
+  padding: 20px;
+  background: #f8f7f1;
+  color: var(--green);
+  font-weight: 700;
+}
+
+/* TABLET */
+
+@media (max-width: 1100px) {
+  .site-header {
+    gap: 13px;
+    padding: 13px 20px;
+  }
+
+  .main-nav {
+    gap: 10px;
+  }
+
+  .main-nav a {
+    font-size: 11px;
+  }
+
+  .user-greeting {
+    display: none;
+  }
+
+  .places-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 16px;
+  }
+
+  .place-card-image {
+    height: 155px;
+  }
+
+  .hero-section {
+    padding-right: 7%;
+    padding-left: 7%;
+  }
+}
+
+/* MOBILE */
+
+@media (max-width: 760px) {
+  .site-header {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 11px;
+    padding: 12px 15px;
+  }
+
+  .brand {
+    font-size: 20px;
+    gap: 7px;
+  }
+
+  .brand-icon {
+    font-size: 26px;
+  }
+
+  .header-actions {
+    gap: 6px;
+  }
+
+  .user-greeting {
+    display: none;
+  }
+
+  .language-selector {
+    padding: 7px;
+  }
+
+  .language-selector select {
+    max-width: 72px;
+  }
+
+  .logout-button {
+    padding: 9px 10px;
+    font-size: 11px;
+  }
+
+  .main-nav {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-wrap: nowrap;
+    gap: 7px;
+    width: 100%;
+    overflow-x: auto;
+    padding: 3px 0 8px;
+    scrollbar-width: thin;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .main-nav a {
+    flex: 0 0 auto;
+    min-height: 34px;
+    padding: 8px 11px;
+    border: 1px solid var(--border);
+    border-radius: 30px;
+    background: white;
+    font-size: 11px;
+    white-space: nowrap;
+  }
+
+  .hero-section {
+    min-height: 430px;
+    padding: 40px 22px;
+    background-position: center;
+  }
+
+  .hero-content {
+    max-width: 100%;
+  }
+
+  .hero-eyebrow {
+    font-size: 11px;
+    letter-spacing: 1.4px;
+  }
+
+  .hero-content h1 {
+    font-size: clamp(37px, 9vw, 50px);
+    letter-spacing: -0.6px;
+  }
+
+  .hero-content h2 {
+    font-size: clamp(20px, 5vw, 25px);
+  }
+
+  .hero-content > p:last-of-type {
+    font-size: 14px;
+    line-height: 1.75;
+  }
+
+  .hero-actions {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 10px;
+    width: 100%;
+    max-width: 350px;
+    margin-top: 23px;
+  }
+
+  .hero-actions button {
+    width: 100%;
+    min-height: 46px;
+    padding: 12px;
+  }
+
+  .places-section,
+  .content-section,
+  .about-section {
+    width: calc(100% - 28px);
+    margin: 28px auto;
+  }
+
+  .section-heading h2 {
+    font-size: 27px;
+  }
+
+  .section-heading p {
+    font-size: 13px;
+  }
+
+  .places-controls {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 12px;
+  }
+
+  .places-controls input {
+    width: 100%;
+  }
+
+  .category-filters {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 7px;
+    overflow-x: auto;
+    padding-bottom: 8px;
+    scrollbar-width: thin;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .category {
+    flex: 0 0 auto;
+    padding: 9px 12px;
+    font-size: 11px;
+  }
+
+  .places-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+  }
+
+  .place-card-image {
+    height: 135px;
+  }
+
+  .place-card-content {
+    padding: 12px;
+  }
+
+  .place-card h3 {
+    font-size: 14px;
+  }
+
+  .place-category {
+    padding: 5px 8px;
+    font-size: 10px;
+  }
+
+  .place-native-name,
+  .place-location,
+  .place-description {
+    font-size: 11px;
+    line-height: 1.55;
+  }
+
+  .place-card-actions {
+    gap: 6px;
+    margin-top: 12px;
+  }
+
+  .map-button {
+    flex: 1;
+    min-height: 34px;
+    padding: 8px 6px;
+    font-size: 10px;
+  }
+
+  .favorite-button {
+    min-width: 34px;
+    min-height: 34px;
+  }
+
+  .content-section {
+    padding: 15px;
+    border-radius: 14px;
+  }
+
+  .about-section {
+    padding: 22px 17px;
+    border-radius: 14px;
+  }
+
+  .site-footer {
+    padding: 25px 16px;
+  }
+}
+
+/* SMALL MOBILE */
+
+@media (max-width: 430px) {
+  .site-header {
+    padding: 11px;
+    gap: 9px;
+  }
+
+  .brand {
+    font-size: 17px;
+  }
+
+  .brand-icon {
+    font-size: 23px;
+  }
+
+  .header-actions {
+    gap: 5px;
+  }
+
+  .language-selector {
+    padding: 6px;
+  }
+
+  .language-selector select {
+    max-width: 62px;
+    font-size: 10px;
+  }
+
+  .logout-button {
+    padding: 8px;
+    font-size: 10px;
+  }
+
+  .hero-section {
+    min-height: 420px;
+    padding: 34px 18px;
+  }
+
+  .hero-content h1 {
+    font-size: 37px;
+  }
+
+  .hero-content h2 {
+    font-size: 20px;
+  }
+
+  .hero-content > p:last-of-type {
+    font-size: 13px;
+  }
+
+  .places-section,
+  .content-section,
+  .about-section {
+    width: calc(100% - 24px);
+    margin: 24px auto;
+  }
+
+  .places-grid {
+    grid-template-columns: 1fr;
+    gap: 13px;
+  }
+
+  .place-card:has(.place-card-image) {
+    display: grid;
+    grid-template-columns: 38% minmax(0, 1fr);
+    align-items: stretch;
+  }
+
+  .place-card:has(.place-card-image) .place-card-image {
+    height: 100%;
+    min-height: 175px;
+  }
+
+  .place-card-content {
+    min-width: 0;
+    padding: 12px;
+  }
+
+  .place-card h3 {
+    margin-top: 8px;
+    font-size: 14px;
+  }
+
+  .main-nav {
+    gap: 6px;
+  }
+
+  .main-nav a {
+    padding: 8px 10px;
+    font-size: 10px;
+  }
+
+  .section-heading h2 {
+    font-size: 24px;
+  }
+}
+
+/* ACCESSIBILITY */
+
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+  outline: 3px solid #d6ad50;
+  outline-offset: 3px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Nashik Darshan — CSS-only destination covers (no image files or AI) */
+.place-card-cover {
+  position: relative;
+  isolation: isolate;
+  display: flex;
+  min-height: 220px;
+  height: 220px;
+  overflow: hidden;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  padding: 22px 18px;
+  text-align: center;
+  color: #fffdf5;
+  background: linear-gradient(135deg, #174c3b, #d78a2f);
+}
+.place-card-cover::before,
+.place-card-cover::after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  border: 1px solid rgba(255,255,255,.24);
+  border-radius: 50%;
+  pointer-events: none;
+}
+.place-card-cover::before {
+  width: 210px;
+  height: 210px;
+  right: -65px;
+  top: -95px;
+}
+.place-card-cover::after {
+  width: 150px;
+  height: 150px;
+  left: -65px;
+  bottom: -90px;
+}
+.place-cover-orb {
+  position: absolute;
+  z-index: -1;
+  border-radius: 50%;
+  background: rgba(255,255,255,.10);
+  pointer-events: none;
+}
+.place-cover-orb-one { width: 120px; height: 120px; left: 10%; top: -45px; }
+.place-cover-orb-two { width: 80px; height: 80px; right: 12%; bottom: -35px; }
+.place-cover-icon {
+  display: grid;
+  place-items: center;
+  width: 78px;
+  height: 78px;
+  border: 1px solid rgba(255,255,255,.42);
+  border-radius: 24px;
+  background: rgba(255,255,255,.15);
+  box-shadow: 0 10px 28px rgba(0,0,0,.12);
+  font-size: 42px;
+  backdrop-filter: blur(5px);
+  transition: transform .28s ease, background .28s ease;
+}
+.place-card:hover .place-cover-icon { transform: translateY(-4px) rotate(-3deg) scale(1.04); background: rgba(255,255,255,.22); }
+.place-cover-label {
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: .17em;
+  text-transform: uppercase;
+  opacity: .88;
+}
+.place-cover-title {
+  max-width: 100%;
+  font-size: clamp(14px, 2vw, 18px);
+  line-height: 1.25;
+  font-weight: 750;
+  text-shadow: 0 2px 8px rgba(0,0,0,.18);
+}
+.cover-temple { background: linear-gradient(135deg, #7d2d19 0%, #c65e25 48%, #e9b65a 100%); }
+.cover-spiritual { background: linear-gradient(135deg, #71351d 0%, #c76a2a 52%, #f1c66d 100%); }
+.cover-fort { background: linear-gradient(135deg, #153e35 0%, #286b53 52%, #9cae76 100%); }
+.cover-nature { background: linear-gradient(135deg, #164e43 0%, #34866c 52%, #b0c78b 100%); }
+.cover-waterfall { background: linear-gradient(135deg, #123f63 0%, #168d9d 54%, #83d8d0 100%); }
+.cover-museum { background: linear-gradient(135deg, #4c3028 0%, #90603b 55%, #d5b16b 100%); }
+.cover-heritage { background: linear-gradient(135deg, #49372d 0%, #9b6c45 52%, #d7bd8c 100%); }
+.cover-tourism { background: linear-gradient(135deg, #294d35 0%, #6e9a58 52%, #d2c78a 100%); }
+.cover-nearby { background: linear-gradient(135deg, #273b54 0%, #4f7590 52%, #b6c5c0 100%); }
+
+@media (max-width: 600px) {
+  .place-card-cover { min-height: 180px; height: 180px; padding: 16px 12px; }
+  .place-cover-icon { width: 66px; height: 66px; border-radius: 20px; font-size: 36px; }
+}
+
+
+/* MOBILE RESPONSIVE FIX: CSS-only destination covers */
+@media (max-width: 430px) {
+  .place-card:has(.place-card-cover) {
+    display: grid;
+    grid-template-columns: 38% minmax(0, 1fr);
+    align-items: stretch;
+  }
+
+  .place-card:has(.place-card-cover) .place-card-cover {
+    height: 100%;
+    min-height: 175px;
+    padding: 12px 8px;
+    gap: 6px;
+  }
+
+  .place-card:has(.place-card-cover) .place-cover-icon {
+    width: 52px;
+    height: 52px;
+    border-radius: 16px;
+    font-size: 29px;
+  }
+
+  .place-card:has(.place-card-cover) .place-cover-label {
+    font-size: 8px;
+    letter-spacing: .1em;
+  }
+
+  .place-card:has(.place-card-cover) .place-cover-title {
+    font-size: 12px;
+    overflow-wrap: anywhere;
+  }
+}
+
+@media (min-width: 431px) and (max-width: 760px) {
+  .place-card-cover {
+    height: 165px;
+    min-height: 165px;
+  }
+
+  .place-cover-icon {
+    width: 62px;
+    height: 62px;
+    font-size: 34px;
+  }
+}
+
+

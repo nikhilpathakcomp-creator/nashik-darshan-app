@@ -1,0 +1,430 @@
+
+/* =====================================
+   KN KUNJ TOURS AND TRAVELS
+   Cab Booking Section
+===================================== */
+
+.cab-booking {
+  width: 100%;
+  padding: 80px 20px;
+  background: #f4f8f4;
+  color: #183b2b;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.cab-booking *,
+.cab-booking *::before,
+.cab-booking *::after {
+  box-sizing: border-box;
+}
+
+.cab-container {
+  max-width: 1150px;
+  margin: 0 auto;
+}
+
+/* Heading */
+
+.cab-heading {
+  text-align: center;
+  max-width: 750px;
+  margin: 0 auto 40px;
+}
+
+.cab-label {
+  display: inline-block;
+  padding: 9px 16px;
+  margin-bottom: 16px;
+  border-radius: 30px;
+  background: #dff3e5;
+  color: #176b3a;
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 1px;
+}
+
+.cab-heading h2 {
+  margin: 0 0 16px;
+  color: #16452c;
+  font-size: clamp(28px, 4vw, 42px);
+  line-height: 1.2;
+  font-weight: 800;
+}
+
+.cab-heading > p {
+  margin: 0 auto 20px;
+  max-width: 650px;
+  color: #617267;
+  font-size: 16px;
+  line-height: 1.8;
+}
+
+.cab-availability {
+  display: inline-block;
+  padding: 10px 16px;
+  background: #e4f8e9;
+  color: #18763b;
+  border: 1px solid #bce8c8;
+  border-radius: 30px;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+/* Main Card */
+
+.cab-card {
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  gap: 30px;
+  padding: 30px;
+  background: #ffffff;
+  border: 1px solid #e2ece4;
+  border-radius: 24px;
+  box-shadow: 0 15px 45px rgba(25, 75, 43, 0.08);
+}
+
+/* Car Details */
+
+.cab-car {
+  padding: 30px 24px;
+  background: linear-gradient(145deg, #e9f8ed, #f8fcf8);
+  border: 1px solid #d8ecdd;
+  border-radius: 18px;
+  text-align: center;
+  align-self: start;
+}
+
+.cab-car-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 105px;
+  height: 105px;
+  margin: 0 auto 22px;
+  background: #ffffff;
+  border: 1px solid #d8ecdd;
+  border-radius: 50%;
+  font-size: 55px;
+  box-shadow: 0 8px 20px rgba(22, 69, 44, 0.08);
+}
+
+.cab-car h3 {
+  margin: 0 0 10px;
+  color: #16452c;
+  font-size: 25px;
+  font-weight: 800;
+}
+
+.cab-car > p {
+  color: #64776a;
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+.cab-features {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin: 25px 0;
+  text-align: left;
+}
+
+.cab-features span {
+  padding: 12px 14px;
+  background: #ffffff;
+  border: 1px solid #e0eee3;
+  border-radius: 10px;
+  color: #285b3b;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+/* Contact Buttons */
+
+.cab-contact-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 24px;
+}
+
+.cab-call {
+  display: block;
+  width: 100%;
+  padding: 14px 16px;
+  background: #176b3a;
+  color: #ffffff;
+  border: 2px solid #176b3a;
+  border-radius: 10px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1.5;
+  cursor: pointer;
+  transition:
+    background 0.2s ease,
+    color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.cab-call:hover {
+  background: #ffffff;
+  color: #176b3a;
+  transform: translateY(-2px);
+}
+
+/* Booking Form */
+
+.cab-form {
+  width: 100%;
+  padding: 10px;
+}
+
+.cab-form h3 {
+  margin: 0 0 25px;
+  color: #16452c;
+  font-size: 26px;
+  font-weight: 800;
+}
+
+.cab-form label {
+  display: block;
+  margin: 18px 0 8px;
+  color: #294a36;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.cab-form input,
+.cab-form select {
+  display: block;
+  width: 100%;
+  min-height: 48px;
+  padding: 12px 14px;
+  background: #ffffff;
+  color: #24382b;
+  border: 1px solid #d5e1d7;
+  border-radius: 9px;
+  outline: none;
+  font-family: inherit;
+  font-size: 14px;
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.cab-form input::placeholder {
+  color: #9aa89d;
+}
+
+.cab-form input:focus,
+.cab-form select:focus {
+  border-color: #26834b;
+  box-shadow: 0 0 0 3px rgba(38, 131, 75, 0.12);
+}
+
+.cab-form select {
+  cursor: pointer;
+}
+
+.cab-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.cab-row > div {
+  min-width: 0;
+}
+
+.cab-row input {
+  min-width: 0;
+}
+
+/* Submit Button */
+
+.cab-submit {
+  display: block;
+  width: 100%;
+  min-height: 52px;
+  margin-top: 28px;
+  padding: 14px 18px;
+  background: #218c4b;
+  color: #ffffff;
+  border: 2px solid #218c4b;
+  border-radius: 10px;
+  font-family: inherit;
+  font-size: 15px;
+  font-weight: 800;
+  cursor: pointer;
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.cab-submit:hover {
+  background: #176b3a;
+  border-color: #176b3a;
+  box-shadow: 0 8px 20px rgba(23, 107, 58, 0.18);
+  transform: translateY(-2px);
+}
+
+.cab-submit:active {
+  transform: translateY(0);
+}
+
+/* Notes */
+
+.cab-note {
+  margin: 16px 0 0;
+  color: #68796d;
+  font-size: 12px;
+  line-height: 1.8;
+  text-align: center;
+  overflow-wrap: anywhere;
+}
+
+/* Business Footer */
+
+.cab-business-footer {
+  margin-top: 35px;
+  padding: 28px 20px;
+  background: #16452c;
+  color: #ffffff;
+  border-radius: 18px;
+  text-align: center;
+}
+
+.cab-business-footer h3 {
+  margin: 0 0 15px;
+  color: #ffffff;
+  font-size: 22px;
+  font-weight: 800;
+}
+
+.cab-business-footer p {
+  margin: 10px 0;
+  color: #e5f4e9;
+  font-size: 14px;
+  line-height: 1.8;
+  overflow-wrap: anywhere;
+}
+
+.cab-business-footer a {
+  color: #b8f3c9;
+  text-decoration: none;
+  font-weight: 700;
+}
+
+.cab-business-footer a:hover {
+  color: #ffffff;
+  text-decoration: underline;
+}
+
+/* Responsive Tablet */
+
+@media (max-width: 850px) {
+  .cab-booking {
+    padding: 60px 18px;
+  }
+
+  .cab-card {
+    grid-template-columns: 1fr;
+    gap: 25px;
+    padding: 22px;
+  }
+
+  .cab-car {
+    padding: 28px 22px;
+  }
+
+  .cab-form {
+    padding: 8px;
+  }
+}
+
+/* Responsive Mobile */
+
+@media (max-width: 520px) {
+  .cab-booking {
+    padding: 45px 14px;
+  }
+
+  .cab-heading {
+    margin-bottom: 28px;
+  }
+
+  .cab-heading h2 {
+    font-size: 29px;
+  }
+
+  .cab-heading > p {
+    font-size: 14px;
+  }
+
+  .cab-label {
+    font-size: 11px;
+    letter-spacing: 0.5px;
+  }
+
+  .cab-card {
+    gap: 22px;
+    padding: 14px;
+    border-radius: 16px;
+  }
+
+  .cab-car {
+    padding: 25px 15px;
+  }
+
+  .cab-car-icon {
+    width: 85px;
+    height: 85px;
+    font-size: 45px;
+  }
+
+  .cab-car h3 {
+    font-size: 22px;
+  }
+
+  .cab-form {
+    padding: 4px;
+  }
+
+  .cab-form h3 {
+    font-size: 23px;
+  }
+
+  .cab-row {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+
+  .cab-form input,
+  .cab-form select {
+    font-size: 14px;
+  }
+
+  .cab-submit {
+    font-size: 14px;
+  }
+
+  .cab-business-footer {
+    padding: 25px 14px;
+  }
+
+  .cab-business-footer h3 {
+    font-size: 19px;
+  }
+}
+
+/* Accessibility */
+
+@media (prefers-reduced-motion: reduce) {
+  .cab-call,
+  .cab-submit {
+    transition: none;
+  }

@@ -1,0 +1,436 @@
+
+/* ==========================================
+   NASHIK AI ASSISTANT — MODERN CHATBOT UI
+   ========================================== */
+
+.nashik-ai-launcher,
+.nashik-ai-panel {
+  font-family: "DM Sans", Arial, sans-serif;
+  box-sizing: border-box;
+}
+
+.nashik-ai-launcher *,
+.nashik-ai-panel * {
+  box-sizing: border-box;
+}
+
+/* Floating launcher button */
+.nashik-ai-launcher {
+  position: fixed;
+  right: 24px;
+  bottom: 24px;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  padding: 14px 20px;
+  border: 0;
+  border-radius: 50px;
+  background: linear-gradient(135deg, #06452e, #16845a);
+  color: white;
+  box-shadow: 0 10px 32px rgba(5, 46, 34, 0.3);
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.nashik-ai-launcher:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 14px 38px rgba(5, 46, 34, 0.4);
+}
+
+.nashik-ai-launcher-icon {
+  font-size: 25px;
+}
+
+/* Main chat panel */
+.nashik-ai-panel {
+  position: fixed;
+  right: 24px;
+  bottom: 24px;
+  z-index: 9999;
+  display: flex;
+  flex-direction: column;
+  width: 390px;
+  max-width: calc(100vw - 32px);
+  height: min(620px, calc(100dvh - 48px));
+  min-height: 350px;
+  overflow: hidden;
+  border: 1px solid rgba(6, 69, 46, 0.12);
+  border-radius: 22px;
+  background: #ffffff;
+  box-shadow: 0 20px 70px rgba(13, 43, 28, 0.22);
+  color: #183328;
+}
+
+/* Header */
+.nashik-ai-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 17px;
+  background: linear-gradient(135deg, #052e22, #0c6947);
+  color: white;
+}
+
+.nashik-ai-brand {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  min-width: 0;
+}
+
+.nashik-ai-avatar {
+  display: grid;
+  flex-shrink: 0;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.13);
+  font-size: 25px;
+}
+
+.nashik-ai-brand h2 {
+  margin: 0 0 5px;
+  color: white;
+  font-size: 17px;
+  font-weight: 800;
+}
+
+.nashik-ai-brand p {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin: 0;
+  color: #d4efdf;
+  font-size: 11px;
+}
+
+.nashik-ai-status-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #70e6a4;
+}
+
+.nashik-ai-header-actions {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.nashik-ai-header-actions button {
+  display: grid;
+  place-items: center;
+  width: 34px;
+  height: 34px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.1);
+  color: white;
+  font-size: 17px;
+  cursor: pointer;
+}
+
+.nashik-ai-header-actions button:hover {
+  background: rgba(255, 255, 255, 0.22);
+}
+
+/* Messages area */
+.nashik-ai-messages {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: 15px;
+  min-height: 0;
+  overflow-y: auto;
+  padding: 18px 14px;
+  background:
+    radial-gradient(circle at 100% 0%, rgba(220, 240, 221, 0.45), transparent 35%),
+    #f8faf6;
+  scrollbar-width: thin;
+}
+
+.nashik-ai-welcome {
+  align-self: center;
+  padding: 7px 12px;
+  border: 1px solid #e3eadf;
+  border-radius: 30px;
+  background: white;
+  color: #647668;
+  font-size: 10px;
+  font-weight: 700;
+}
+
+.nashik-ai-message {
+  display: flex;
+  align-items: flex-end;
+  gap: 8px;
+  max-width: 94%;
+}
+
+.bot-message {
+  align-self: flex-start;
+}
+
+.user-message {
+  align-self: flex-end;
+  justify-content: flex-end;
+}
+
+.nashik-ai-message-avatar {
+  display: grid;
+  flex-shrink: 0;
+  place-items: center;
+  width: 28px;
+  height: 28px;
+  border: 1px solid #e0e9df;
+  border-radius: 10px;
+  background: white;
+  font-size: 15px;
+}
+
+.nashik-ai-bubble {
+  padding: 12px 14px;
+  border-radius: 15px;
+  font-size: 13px;
+  line-height: 1.7;
+  overflow-wrap: anywhere;
+  white-space: pre-wrap;
+}
+
+.bot-message .nashik-ai-bubble {
+  border: 1px solid #e4eae0;
+  border-bottom-left-radius: 5px;
+  background: white;
+  color: #2b4334;
+  box-shadow: 0 2px 6px rgba(17, 50, 30, 0.03);
+}
+
+.user-message .nashik-ai-bubble {
+  border-bottom-right-radius: 5px;
+  background: linear-gradient(135deg, #075637, #14845b);
+  color: white;
+}
+
+/* Quick questions */
+.nashik-ai-quick-questions {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding-left: 36px;
+}
+
+.nashik-ai-quick-questions p {
+  margin: 0 0 2px;
+  color: #647668;
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.nashik-ai-quick-questions button {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid #dce8dc;
+  border-radius: 11px;
+  background: white;
+  color: #24523b;
+  font-size: 11px;
+  line-height: 1.5;
+  text-align: left;
+  cursor: pointer;
+  transition: border-color 0.2s ease, background 0.2s ease;
+}
+
+.nashik-ai-quick-questions button:hover {
+  border-color: #70a888;
+  background: #f0f8ef;
+}
+
+.nashik-ai-quick-questions button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Typing indicator */
+.nashik-ai-typing {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.nashik-ai-typing > span {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #4b8c69;
+  animation: nashik-ai-bounce 1s infinite ease-in-out;
+}
+
+.nashik-ai-typing > span:nth-child(2) {
+  animation-delay: 0.15s;
+}
+
+.nashik-ai-typing > span:nth-child(3) {
+  animation-delay: 0.3s;
+}
+
+.nashik-ai-typing small {
+  margin-left: 5px;
+  color: #718075;
+  font-size: 10px;
+}
+
+@keyframes nashik-ai-bounce {
+  0%, 60%, 100% {
+    transform: translateY(0);
+    opacity: 0.5;
+  }
+  30% {
+    transform: translateY(-4px);
+    opacity: 1;
+  }
+}
+
+/* Input area */
+.nashik-ai-input-area {
+  display: flex;
+  align-items: flex-end;
+  gap: 9px;
+  padding: 12px;
+  border-top: 1px solid #e8ede5;
+  background: white;
+}
+
+.nashik-ai-input-area textarea {
+  flex: 1;
+  min-width: 0;
+  min-height: 42px;
+  max-height: 110px;
+  resize: vertical;
+  padding: 12px;
+  border: 1px solid #e0e7dd;
+  border-radius: 13px;
+  outline: none;
+  background: #f9fbf7;
+  color: #183328;
+  font: inherit;
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+.nashik-ai-input-area textarea:focus {
+  border-color: #4a9970;
+  box-shadow: 0 0 0 3px rgba(74, 153, 112, 0.12);
+}
+
+.nashik-ai-input-area textarea::placeholder {
+  color: #8b988e;
+}
+
+.nashik-ai-input-area > button {
+  display: grid;
+  flex-shrink: 0;
+  place-items: center;
+  width: 42px;
+  height: 42px;
+  border: 0;
+  border-radius: 13px;
+  background: #075637;
+  color: white;
+  font-size: 19px;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.nashik-ai-input-area > button:hover:not(:disabled) {
+  background: #0b7950;
+}
+
+.nashik-ai-input-area > button:disabled {
+  background: #b8c9bd;
+  cursor: not-allowed;
+}
+
+/* Footer */
+.nashik-ai-footer {
+  padding: 8px;
+  border-top: 1px solid #f0f2ed;
+  background: white;
+  color: #8a968c;
+  font-size: 9px;
+  text-align: center;
+}
+
+/* Mobile layout */
+@media (max-width: 600px) {
+  .nashik-ai-launcher {
+    right: 14px;
+    bottom: 14px;
+    gap: 8px;
+    padding: 12px 16px;
+    font-size: 12px;
+  }
+
+  .nashik-ai-launcher-icon {
+    font-size: 22px;
+  }
+
+  .nashik-ai-panel {
+    right: 8px;
+    bottom: 8px;
+    width: calc(100vw - 16px);
+    max-width: none;
+    height: calc(100dvh - 16px);
+    min-height: 0;
+    border-radius: 18px;
+  }
+
+  .nashik-ai-header {
+    padding: 13px;
+  }
+
+  .nashik-ai-messages {
+    padding: 14px 10px;
+  }
+
+  .nashik-ai-bubble {
+    padding: 11px;
+    font-size: 12px;
+  }
+
+  .nashik-ai-quick-questions {
+    padding-left: 32px;
+  }
+
+  .nashik-ai-input-area {
+    padding: 9px;
+  }
+}
+
+/* Accessibility */
+.nashik-ai-launcher:focus-visible,
+.nashik-ai-panel button:focus-visible,
+.nashik-ai-panel textarea:focus-visible {
+  outline: 3px solid #e8bd62;
+  outline-offset: 3px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .nashik-ai-launcher,
+  .nashik-ai-panel *,
+  .nashik-ai-panel *::before,
+  .nashik-ai-panel *::after {
+    animation: none !important;
+    transition: none !important;
+    scroll-behavior: auto !important;
+  }
+}
